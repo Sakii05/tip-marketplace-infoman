@@ -1,6 +1,6 @@
 export async function onRequestGet(context) {
   try {
-    // env.DB is the binding you just created!
+    // Fetch from Cloudflare D1
     const { results } = await context.env.DB.prepare(`
       SELECT l.*, u.full_name as seller_name, c.name as category_name
       FROM listings l
@@ -11,6 +11,7 @@ export async function onRequestGet(context) {
     `).all();
 
     return new Response(JSON.stringify(results), {
+      status: 200,
       headers: { "Content-Type": "application/json" }
     });
   } catch (err) {
