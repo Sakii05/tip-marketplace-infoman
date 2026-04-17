@@ -1,0 +1,6 @@
+name = "tip-student-marketplace"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "tip-marketplace"
+database_id = "34bc745c-ba26-4a6f-972c-6f8380898a08"
